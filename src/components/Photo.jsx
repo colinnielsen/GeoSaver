@@ -5,9 +5,9 @@ class Photo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            picName: '',
-            picUrl: '',
-            coords: '',
+            picName: props.picName,
+            picUrl: props.picUrl,
+            coords: props.coords,
             modalOpen: false
         };
 
@@ -78,15 +78,15 @@ class Photo extends React.Component {
                                 <Form onSubmit={this.handleSubmit}>
                                     <Form.Field>
                                         <label>Photo Name</label>
-                                        <input name="picName" type="text" value={this.state.value} onChange={this.handleChange} placeholder={this.props.picName} />
+                                        <input name="picName" type="text" value={this.state.picName} onChange={this.handleChange} placeholder={this.props.picName} />
                                     </Form.Field>
                                     <Form.Field>
                                         <label>Photo Url</label>
-                                        <input name="picUrl" type="text" value={this.state.value} onChange={this.handleChange} placeholder={this.props.picUrl} />
+                                        <input name="picUrl" type="text" value={this.state.picUrl} onChange={this.handleChange} placeholder={this.props.picUrl} />
                                     </Form.Field>
                                     <Form.Field>
                                         <label>Coordinates</label>
-                                        <input name="coords" type="number" value={this.state.value} onChange={this.handleChange} placeholder={this.props.coords} />
+                                        <input name="coords" type="text" value={this.state.coords} onChange={this.handleChange} placeholder={this.props.coords} />
                                     </Form.Field>
                                     <Button type='submit' value="Submit">Submit</Button>
                                     <Button value='close' onClick={this.handleClose}>Close</Button>

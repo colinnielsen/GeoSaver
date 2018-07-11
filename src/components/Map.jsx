@@ -11,16 +11,20 @@ export default class SimpleExample extends Component {
     }
 
     drawMarker(photo) {
-        var incomingCoords = photo.coords.split(',').map(coord => typeof parseFloat(coord) !== 'number')
-        if (incomingCoords[0] || incomingCoords[1]) {
-            alert("please use valid coordinate format")
+        var incomingPosition = photo.coords.split(',').map(coord => typeof parseFloat(coord) !== 'number')
+        if (incomingPosition[0] || incomingPosition[1]) {
+            return alert("please use valid coordinate format for " + `${photo.picName}`)
         } else {
-            let position = photo.coords.split(',').map(coord => {
-                switch (coord.split('°')[1].trim().toLowerCase()) {
-                    case "n" || "e":
-                        return parseFloat(coord.split('°')[0].trim())
-                    case "w" || "s":
-                        return parseFloat("-" + coord.split('°')[0].trim())
+            var position = photo.coords.split(',').map(coord => {
+                if (coord.split('°')[1] === undefined) {
+                    return alert("please use valid coordinate format for " + `${photo.picName}`)
+                } else {
+                    switch (coord.split('°')[1].trim().toLowerCase()) {
+                        case "n" || "e":
+                            return parseFloat(coord.split('°')[0].trim())
+                        case "w" || "s":
+                            return parseFloat("-" + coord.split('°')[0].trim())
+                    }
                 }
             })
             if (isValidCoordinates(position[1], position[0])) {
