@@ -17,4 +17,3 @@ Fully fleshed out signup and sign in routes
 Create, edit, and delete your own photos
 ![dashboard gif](https://media.giphy.com/media/2Kol9HPUSHYOIpEJBg/giphy.gif)
 
-#### thanks for looking!
