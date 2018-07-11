@@ -18,7 +18,7 @@
 }
 
 .cardHolder {
-  margin: 0 .5rem ;
+  margin: 1rem ;
 }
 
 .inputwrapper {
@@ -68,3 +68,20 @@ button {
   flex-flow: row wrap;
   justify-content: center;
 }
+
+.coords:invalid {
+  border: 2px dashed red !important;
+}
+
+.coords:valid {
+  border: 1px solid lightgrey !important;
+}
+
+.coordError {
+  display: none;
+}
+
+.coords:invalid ~ .coordError{
+  display: block;
+}
+

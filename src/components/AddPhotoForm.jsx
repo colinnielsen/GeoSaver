@@ -45,11 +45,12 @@ class AddPhotoForm extends React.Component {
                 </Form.Field>
                 <Form.Field>
                     <label>Photo Url</label>
-                    <input name="picUrl" type="text" value={this.state.value} onChange={this.handleChange} required />
+                    <input name="picUrl" type="url" value={this.state.value} onChange={this.handleChange} required />
                 </Form.Field>
                 <Form.Field>
                     <label>Coordinates</label>
-                    <input name="coords" type="text" value={this.state.value} onChange={this.handleChange} required />
+                    <input name="coords" className="coords" type="text" required pattern="\d.*[ewEW]$" value={this.state.value} onChange={this.handleChange} />
+                    <div className="coordError">Use proper coordinate format - example (40.0150° N, 105.2705° W)</div>
                 </Form.Field>
                 <Button type='submit' value="Submit">Submit</Button>
             </Form>
@@ -58,3 +59,4 @@ class AddPhotoForm extends React.Component {
 }
 
 export default AddPhotoForm
+//[nsNS][\d\s,\°\.]*[ewEW]

@@ -46,7 +46,7 @@ export default class SimpleExample extends Component {
     render() {
         const center = [37.0902, -95.7129]
         return (
-            <Map center={center} zoom={4}>
+            <Map center={center} zoom={4} scrollWheelZoom={false}>
                 <TileLayer
                     attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

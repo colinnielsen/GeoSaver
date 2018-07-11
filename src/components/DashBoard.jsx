@@ -60,10 +60,10 @@ class DashBoard extends React.Component {
         return (
             <div className="dashboard ui">
                 {this.checkPhotos()}
+                {!this.state.switchToAdd && <button className="ui button positive" onClick={this.switchToAdd} > Add A photo!</button>}
                 {this.state.switchToAdd ? <AddPhotoForm switchToDash={this.switchToDash} /> :
                     <Photogrid photos={this.state.photos} renderCards={this.renderCards} getData={this.getData} />
                 }
-                {!this.state.switchToAdd && <button className="ui button" onClick={this.switchToAdd} > Add A photo!</button>}
             </div >
         );
     }

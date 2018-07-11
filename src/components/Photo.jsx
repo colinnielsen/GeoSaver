@@ -82,11 +82,12 @@ class Photo extends React.Component {
                                     </Form.Field>
                                     <Form.Field>
                                         <label>Photo Url</label>
-                                        <input name="picUrl" type="text" value={this.state.picUrl} onChange={this.handleChange} placeholder={this.props.picUrl} />
+                                        <input name="picUrl" type="url" value={this.state.picUrl} onChange={this.handleChange} placeholder={this.props.picUrl} />
                                     </Form.Field>
                                     <Form.Field>
                                         <label>Coordinates</label>
-                                        <input name="coords" type="text" value={this.state.coords} onChange={this.handleChange} placeholder={this.props.coords} />
+                                        <input name="coords" className="coords" type="text" required pattern="\d.*[ewEW]$" value={this.state.coords} onChange={this.handleChange} />
+                                        <div className="coordError">Use proper coordinate format - example (40.0150° N, 105.2705° W)</div>
                                     </Form.Field>
                                     <Button type='submit' value="Submit">Submit</Button>
                                     <Button value='close' onClick={this.handleClose}>Close</Button>
