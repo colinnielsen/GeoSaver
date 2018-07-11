@@ -20,7 +20,8 @@ class DashBoard extends React.Component {
 
     getData() {
         const token = window.localStorage.token
-        fetch('http://localhost:3000/users/dashboard', {
+        const url = "https://geosaverbackend.herokuapp.com/"
+        fetch(url + "users/dashboard", {
             method: "POST",
             headers: {
                 Authorization: `Bearer ${token}`
@@ -28,7 +29,7 @@ class DashBoard extends React.Component {
         })
             .then(res => res.json())
             .then(resJSON => this.setState({ photos: resJSON.data }))
-            .catch((data) => console.log(data.error))
+            .catch(data => console.log(data.error))
 
     }
 

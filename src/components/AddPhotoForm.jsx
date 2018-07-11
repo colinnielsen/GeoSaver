@@ -24,7 +24,8 @@ class AddPhotoForm extends React.Component {
         let coords = this.state.coords
         const data = { picName, picUrl, coords }
         const token = window.localStorage.token
-        fetch('http://localhost:3000/users/addPhoto', {
+        const url = "https://geosaverbackend.herokuapp.com/"
+        fetch(url + "users/addPhoto", {
             method: 'POST',
             headers: new Headers({
                 'Content-type': 'application/json',

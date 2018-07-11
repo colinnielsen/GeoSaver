@@ -25,7 +25,7 @@ class App extends Component {
   }
 
   login(username, password) {
-    const url = "http://localhost:3000/"
+    const url = "https://geosaverbackend.herokuapp.com/"
     const data = { username, password }
 
     fetch(url + "auth/login", {
@@ -78,7 +78,7 @@ class App extends Component {
 
 
   signUp(username, password) {
-    let url = "http://localhost:3000/"
+    let url = "https://geosaverbackend.herokuapp.com/"
     let data = { username, password }
     fetch(url + "auth/signup", {
       method: 'POST',

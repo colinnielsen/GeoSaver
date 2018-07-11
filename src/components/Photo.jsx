@@ -26,7 +26,8 @@ class Photo extends React.Component {
         let id = this.props.photoId
         const data = { picName, picUrl, coords }
         const token = window.localStorage.token
-        fetch('http://localhost:3000/users/updatePhoto/' + id, {
+        const url = "https://geosaverbackend.herokuapp.com/"
+        fetch(url + 'users/updatePhoto/' + id, {
             method: 'PUT',
             headers: new Headers({
                 'Content-type': 'application/json',
@@ -42,7 +43,8 @@ class Photo extends React.Component {
     deletePhoto() {
         var id = this.props.photoId
         var token = window.localStorage.token
-        fetch('http://localhost:3000/users/' + id, {
+        const url = "https://geosaverbackend.herokuapp.com/"
+        fetch(url + 'users/' + id, {
             method: 'delete',
             headers: new Headers({
                 'Content-type': 'application/json',
@@ -84,7 +86,7 @@ class Photo extends React.Component {
                                     </Form.Field>
                                     <Form.Field>
                                         <label>Coordinates</label>
-                                        <input name="coords" type="text" value={this.state.value} onChange={this.handleChange} placeholder={this.props.coords} />
+                                        <input name="coords" type="number" value={this.state.value} onChange={this.handleChange} placeholder={this.props.coords} />
                                     </Form.Field>
                                     <Button type='submit' value="Submit">Submit</Button>
                                     <Button value='close' onClick={this.handleClose}>Close</Button>
