@@ -12,7 +12,7 @@ GeoSaver app is an full stack crud app made with Reactjs, knex, express, and pos
 ## Auth
 ###
 Fully fleshed out signup and sign in routes 
-![auth gif](https://media.giphy.com/media/7JyTtMKN8RcXKZSFEo/giphy.gif)
+![auth gif](https://media.giphy.com/media/5b1TxP9qScObNngyjT/giphy.gif)
 
 
 
