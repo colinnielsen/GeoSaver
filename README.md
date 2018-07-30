@@ -21,3 +21,5 @@ Create, edit, and delete your own photos
 ###
 ![dashboard gif](https://media.giphy.com/media/2Kol9HPUSHYOIpEJBg/giphy.gif)
 
+#### license 
+MIT
